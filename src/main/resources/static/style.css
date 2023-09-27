@@ -1,0 +1,7 @@
+@charset "UTF-8";
+.datatable{
+	writing-mode: vertical-lr;
+	
+}
+th{writing-mode: horizontal-tb;}
+td{writing-mode: horizontal-tb;}

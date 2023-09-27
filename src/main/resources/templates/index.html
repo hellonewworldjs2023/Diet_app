@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.0.2/css/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+<title>Diet App</title>
+<script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<div>
+	<h1 class="text-primary">Diet App</h1>
+	<button class="button button-primary"><a th:href="@{userInfo}">ユーザー情報</a></button>
+</div>
+
+<table id="wrap" class="datatable table-bordered">
+        <!-- この中にJSONデータが表示されます -->
+    </table>
+ 
+    <!-- JSON受け取りと表示  -->
+    <script >
+		var url = "/selectMany"
+        var data = [];
+        $.ajax({
+            type : 'GET',
+            url : url,
+            dataType : 'json'
+        }).then(
+                function(json) {
+                    for (var i = 0; i < json.length; i++) {
+                        data.push({
+                            'name' : json[i].name,
+                            'weight' : json [i].weight,
+                            'fat_per' : json [i].fat_per
+                        });
+                    };
+                    console.log(data);
+                    var j = '<tr><th>名前</th><th>体重</th><th>体脂肪率</th></tr>';
+                    $("table#wrap").append(j);
+                    for (var i = 0; i < data.length; i++) {
+                        var h = '<tr><td>' + data[i].name + '</td>'
+                                + '<td>' + data[i].weight + '</td>' + '<td>'
+                                + data[i].fat_per + '</td></tr>';
+                        $("table#wrap").append(h);
+                    }
+                });
+    </script>
+</body>
+</html>

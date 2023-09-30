@@ -6,11 +6,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.example.entity.UserAccount;
 import com.example.mapper.AccountMapper;
+import com.example.model.UserAccount;
 
 @Service
-public class DemoUserDetailService implements UserDetailsService {
+public class DemoUserDetailsService implements UserDetailsService {
 
 	@Autowired
 	AccountMapper mapper;

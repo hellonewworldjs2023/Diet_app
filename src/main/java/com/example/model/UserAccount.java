@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.example.model;
 
 public record UserAccount(String emailAddress,String password) {
 

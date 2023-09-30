@@ -1,4 +1,4 @@
-package com.example.domain.model;
+package com.example.model;
 
 
 
@@ -12,7 +12,7 @@ public class BodyData {
 	private int id; //ID
 	private String name;//ユーザー名
 	private double weight;//体重
-	private double fat_per;//体脂肪率
-	private LocalDateTime updated_at;//入力日
+	private double fatPer;//体脂肪率
+	private LocalDateTime createdAt;//入力日
 
 }

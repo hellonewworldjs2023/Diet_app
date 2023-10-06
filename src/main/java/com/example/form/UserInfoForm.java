@@ -1,12 +1,9 @@
-package com.example.model;
-
+package com.example.form;
 
 import lombok.Data;
 
-
 @Data
-public class UserInfo {
-	
+public class UserInfoForm {
 	
 	private int userId;
 	
@@ -25,7 +22,5 @@ public class UserInfo {
 	private double targetWeight;
 	
 	private int point;
-	
-	
 
 }

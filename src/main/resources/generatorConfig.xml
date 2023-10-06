@@ -22,11 +22,11 @@
       <property name="trimStrings" value="true" />
     </javaModelGenerator>
 
-    <sqlMapGenerator targetPackage="test.xml"  targetProject="\MBGTestProject\src">
+    <sqlMapGenerator targetPackage="xml"  targetProject="\MBGTestProject\src">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 
-    <javaClientGenerator type="XMLMAPPER" targetPackage="test.dao"  targetProject="\MBGTestProject\src">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="xml"  targetProject="\MBGTestProject\src">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 

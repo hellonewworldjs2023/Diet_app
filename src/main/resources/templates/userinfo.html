@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layout/layout}">
+<head>
+<meta charset="UTF-8">
+<title>ユーザー情報</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div>
+			<h1>ユーザー情報</h1>
+		</div>
+		<form id="user-info-form" method="post" th:action="@{/userinfo}" class="form-user-info" th:object="${userInfoForm}">
+			<!-- ユーザー詳細情報 -->
+			<table class="table table-striped table-bordered table-hover">
+				<tbody>
+					<tr>
+						<th class="w-25">ユーザーID</th>
+						<td th:text="*{userId}"></td>
+					</tr>
+					<tr>
+						<th>ユーザー名</th>
+						<td th:text="*{userName} == null ? '登録されていません' : *{userName}"></td>
+					</tr>
+					<tr>
+						<th>メールアドレス</th>
+						<td th:text="*{emailAddress} == null ? '登録されていません' : *{emailAddress}"></td>
+					</tr>
+					<tr> 
+						<th>パスワード</th>
+						<td th:text="*{passwordBeforeHashing} == null ? '登録されていません' : *{passwordBeforeHashing}"></td>
+					</tr> 
+					<tr>
+						<th>身長</th> 
+						<td th:text="*{height} == null ? '登録されていません' : *{height}"></td>
+					</tr>
+					<tr>
+						<th>ウェスト</th> 
+						<td th:text="*{waist} == null ? '登録されていません' : *{waist}"></td> 
+					</tr>
+					<tr> 
+						<th>目標体重</th>
+						<td th:text="*{targetWeight} == null ? '登録されていません' : *{targetWeight}"></td>
+					</tr>
+					<tr>
+						<th>ポイント</th> 
+						<td th:text="*{point} == null ? '登録されていません' : *{point}"></td>
+					</tr>
+				</tbody>
+			</table>	
+		</form>
+	</div>
+</body>
+</html>

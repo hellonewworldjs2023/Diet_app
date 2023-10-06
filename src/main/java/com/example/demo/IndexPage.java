@@ -1,29 +1,26 @@
 package com.example.demo;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
 public class IndexPage {
+	
+	
 
 	@RequestMapping("/index")
 	public String start(){
-		return "index.html";
+		return "index";
 	}
 	
-	@RequestMapping("userInfo")
-	public String userInfo(){
-		return "userInfo";
-		
+	@GetMapping("/login")
+	public String login() {
+		return "login";
 	}
 	
-//	@RequestMapping(value="/data",method=RequestMethod.GET)
-//	@Transactional
-//	@ResponseBody
-//	public List<BodyData> bodyData(){
-//		List<BodyData> bodyData = 
-//				return bodyData;
-//	}
+
+	
 	
 }

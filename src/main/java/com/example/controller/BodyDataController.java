@@ -23,7 +23,7 @@ public class BodyDataController {
 	@GetMapping("/list")
 public String getUserList(Model model) {
 		
-		// テーブル(M_USER)から全項目を取得
+		// テーブル(sampletb)から全項目を取得
 		List<BodyData> bodyDataList = bodydataservice.getAllBodyData();
 		
 		// Modelに登録

@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
+import com.example.mapper.BodyDataMapper;
 import com.example.model.BodyData;
-import com.example.repository.BodyDataMapper;
 import com.example.service.BodyDataService;
 
 @Service
@@ -18,6 +18,11 @@ public class BodyDataServiceImpl implements BodyDataService {
 	
 	@Autowired
 	private BodyDataMapper mapper;
+	
+	@Override
+	public void inputData(BodyData bodydata) {
+		mapper.insertOne(bodydata);
+	}
 
 	@Override
 	public List<BodyData> getAllBodyData() {

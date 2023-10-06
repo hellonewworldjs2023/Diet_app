@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages={"com.example"})
 @MapperScan(basePackages = "com.example.mapper")
-@MapperScan(basePackages= "com.example.repository")
 public class DietAppApplication {
 
 	public static void main(String[] args) {

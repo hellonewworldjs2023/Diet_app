@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.BodyDataMapper">
+	<!-- ユーザー1件登録 -->
+	<insert id="insertOne">
+		<!-- テーブル(sampletbの各項目) -->
+		insert into sampletb(
+			id,
+			name,
+			weight,
+			fat_per,
+			created_at,
+		)
+		<!-- エンティティクラスに定義した各項目 -->
+		values(
+		values(
+			#{id},
+			#{name},
+			#{weight},
+			#{fatPer},
+			#{createdAt},
+		)
+		)
+	</insert>
+	
+	<select id="findAllBodyData" resultType="BodyData">
+		SELECT * FROM sampletb
+	</select>
+</mapper>

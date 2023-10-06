@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Mapperとxmlのマッピング -->
+<mapper namespace="com.example.mapper.UserInfoMapper">
+<resultMap type="com.example.model.UserInfo" id="userInfo">
+	<id column="user_id" property="userId"/>
+	<result column="user_name" property="userName"/>
+	<result column="email_address" property="emailAddress"/>
+	<result column="password_before_hashing" property="passwordBeforeHashing"/>
+	<result column="password" property="password"/>
+	<result column="height" property="height"/>
+	<result column="waist" property="waist"/>
+	<result column="target_weight" property="targetWeight"/>
+	<result column="point" property="point"/>
+</resultMap>
+	<insert id="insertOneUserInfo">
+		<!-- テーブル(user_dataの各項目) -->
+		insert into user_data(
+			user_id,
+			user_name,
+			email_address,
+			password_before_hashing,
+			password,
+			height,
+	 		waist,
+			target_weight,
+			point
+		)
+		<!-- エンティティクラスに定義した各項目 -->
+		values(
+		values(
+			#{userId},
+			#{userName},
+			#{emailAddress},
+			#{passwordBeforeHashing},
+			#{password},
+			#{height},
+			#{waist},
+			#{targetWeight},
+			#{point};
+		)
+		)
+	</insert>
+	
+	<select id="findOneUserInfo" resultMap="userInfo">
+		SELECT * FROM user_data WHERE email_address = #{emailAddress}
+	</select>
+</mapper>

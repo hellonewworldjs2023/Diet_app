@@ -11,8 +11,11 @@
 <body>
 <div>
 	<h1 class="text-primary">Diet App</h1>
-	<button class="button button-primary"><a th:href="@{userInfo}">ユーザー情報</a></button>
+	<button class="button button-primary"><a th:href="@{userinfo}">ユーザー情報</a></button>
 </div>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" name="logout" value="ログアウト"/>
+</form>
 
 <table id="wrap" class="datatable table-bordered">
         <!-- この中にJSONデータが表示されます -->
@@ -20,7 +23,7 @@
  
     <!-- JSON受け取りと表示  -->
     <script >
-		var url = "/selectMany"
+		var url = ""
         var data = [];
         $.ajax({
             type : 'GET',

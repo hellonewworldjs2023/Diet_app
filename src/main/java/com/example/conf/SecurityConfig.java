@@ -19,10 +19,17 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-        .formLogin()
-        .and()
-        .logout()
-        .and()
+        .formLogin(login -> login
+        		.loginPage("/login").permitAll()
+        		.defaultSuccessUrl("/index")
+        		.usernameParameter("emailAddress")
+        		.passwordParameter("password")
+        		)
+        
+        .logout(logout -> logout
+        		.logoutSuccessUrl("/login?logout")
+        		.invalidateHttpSession(true)
+        		)
         .authorizeHttpRequests(authz -> authz
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations())
                 .permitAll()
@@ -35,9 +42,5 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-//    @Bean
-//    public PasswordEncoder passwordEncoder(){
-//        return NoOpPasswordEncoder.getInstance();
-//    }
 
 }

@@ -6,6 +6,8 @@ import com.example.model.BodyData;
 
 public interface BodyDataService {
 	
+	public void inputData(BodyData bodydata);
+	
 	public List<BodyData> getAllBodyData();
 
 }

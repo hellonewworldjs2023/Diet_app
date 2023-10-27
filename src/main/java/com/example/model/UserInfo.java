@@ -1,6 +1,8 @@
 package com.example.model;
 
 
+import java.util.List;
+
 import lombok.Data;
 
 
@@ -25,6 +27,8 @@ public class UserInfo {
 	private double targetWeight;
 	
 	private int point;
+	
+	private List<BodyData> bodyDatas;
 	
 	
 

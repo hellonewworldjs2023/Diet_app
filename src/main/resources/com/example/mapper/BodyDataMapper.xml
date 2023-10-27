@@ -17,9 +17,9 @@
 		values(
 		values(
 			#{id},
-			#{name},
-			#{weight},
-			#{fatPer},
+			#{name,jdbcType=VARCHAR},
+			#{weight,jdbcType=DOUBLE},
+			#{fatPer,jdbcType=DOUBLE},
 			#{createdAt},
 		)
 		)

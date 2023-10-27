@@ -11,7 +11,40 @@
 <body>
 <div>
 	<h1 class="text-primary">Diet App</h1>
-	<button class="button button-primary"><a th:href="@{userinfo}">ユーザー情報</a></button>
+	<div layout:fragment="content">
+		<div class="header border-bottom">
+			<h1 class="h2">身体データ画面</h1>
+		</div>
+		<!-- 一覧表示 -->
+		<div>
+			<table class="table table-striped table-bordered table-hover table-primary datatable">
+				<thead class="thead-light">
+					<tr>
+						<th class="th-width">ユーザーID</th>
+						<th class="th-width">ユーザー名</th>
+						<th class="th-width">体重</th>
+						<th class="th-width">体脂肪率</th>
+						<th class="th-width">作成日時</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="align-middle" th:each="item : ${bodyDataList}">
+						<td th:text="${item.id}"></td>
+						<td th:text="${item.name}"></td>	
+						<td th:text="${item.weight}"></td>
+						<td th:text="${item.fatPer}"></td>
+						<td th:text="${item.createdAt}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<form action="#" th:action="@{/userinfo}" method="post">
+		<button class="btn btn-lg btn-primary btn-block">ユーザー情報</button>
+	</form>
+	<form action="#" th:action="@{/inputdata}" method="get" class="my-1">
+		<button class="btn btn-lg btn-primary btn-block">入力</button>
+	</form>
 </div>
 <form th:action="@{/logout}" method="post">
     <input type="submit" name="logout" value="ログアウト"/>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap,min.js}" defer></script>
+<title>ユーザー登録</title>
+</head>
+<body>
+	<form id="signup-form" method="post" action="signup" class=form-signup>
+		<h1 class="text-center">ユーザー登録</h1>
+		<!-- メールアドレス -->
+		<div class="form-group">
+			<label for="userId">メールアドレス</label>
+			<input type="text" class="form-control"> 
+		</div>
+		<!-- ユーザー名 -->
+		<div class="form-group">
+			<label for="userName">ユーザー名</label>
+			<input type="text" class="form-control" >
+		</div>
+
+		<!-- パスワード -->
+		<div class="form-group">
+			<label for="password_before_hashing">パスワード</label>
+			<input type="password" class="form-control" name="">
+		</div>
+		<!-- パスワード(確認用) -->
+		<div class="form-group">
+			<label for="password_before_hashing2">パスワード(確認用)</label>
+			<input type="password" class="form-control" name="">
+		</div>
+		<!-- 身長 -->
+		<div class=form-group>
+			<label for="height">身長</label>
+			<input type="text" class="form-control">
+		</div>
+		<!-- ウェスト -->
+		<div class="form-group">
+			<label for="waist">ウェスト</label>
+			<input type="text" class="form-control">
+		</div>
+		<!-- 目標体重 -->
+		<div class="form-group">
+			<label for="targetWeight">目標体重</label>
+			<input type="text" class="form-control">
+		</div>
+		<!-- 登録ボタン -->
+		<input type="button" value="ユーザー登録" class="btn btn-primary w-100 mt-3">
+	</form>
+</body>
+</html>

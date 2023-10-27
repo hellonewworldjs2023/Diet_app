@@ -11,6 +11,8 @@ public interface BodyDataMapper {
 	
 	public int insertOne(BodyData bodydata);
 	
+	
+	
 	public List<BodyData> findAllBodyData();
 
 }

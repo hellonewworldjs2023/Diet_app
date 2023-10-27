@@ -10,5 +10,7 @@ public interface UserInfoMapper {
 	public int insertOneUserInfo(UserInfo userinfo);
 	
 	public UserInfo findOneUserInfo(String emailAddress);
+	
+	public UserInfo findByUserAddress(String emailAdress);
 
 }

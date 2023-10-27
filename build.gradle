@@ -26,6 +26,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.webjars:bootstrap:5.0.2'
 	implementation 'org.webjars:jquery:3.7.1'
+	implementation 'org.webjars:webjars-locator:0.40'
 	implementation "org.springframework.boot:spring-boot-starter-security"
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2'
 	implementation 'org.modelmapper:modelmapper:2.3.0'

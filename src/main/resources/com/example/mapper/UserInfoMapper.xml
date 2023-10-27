@@ -15,6 +15,17 @@
 	<result column="target_weight" property="targetWeight"/>
 	<result column="point" property="point"/>
 </resultMap>
+<resultMap type="com.example.model.UserInfo" id="bodydataMap">
+	<id column="user_name" property="userName"/>
+	<result column="email_address" property="emailAddress"/>
+	<collection ofType="com.example.model.BodyData" property="bodyDatas">
+		<result column="body_name" property="name"/>
+		<result column="body_id" property="id"/>
+		<result column="body_weight" property="weight"/>
+		<result column="body_fat_per" property="fatPer"/>
+		<result column="body_created_at" property="createdAt"/>	
+	</collection>
+</resultMap>
 	<insert id="insertOneUserInfo">
 		<!-- テーブル(user_dataの各項目) -->
 		insert into user_data(
@@ -46,5 +57,23 @@
 	
 	<select id="findOneUserInfo" resultMap="userInfo">
 		SELECT * FROM user_data WHERE email_address = #{emailAddress}
+	</select>
+	<select id="findByUserAddress" resultMap="bodydataMap">
+		SELECT
+			u.user_name as user_name,
+			u.email_address as email_address,
+			sm.id as body_id,
+			sm.name as body_name,
+			sm.weight as body_weight,
+			sm.fat_per as body_fat_per,
+			sm.created_at as body_created_at
+		FROM
+			user_data u
+		JOIN
+			sampletb sm
+		ON
+			u.user_name = sm.name
+		WHERE
+			u.email_address = #{emailAddress}
 	</select>
 </mapper>

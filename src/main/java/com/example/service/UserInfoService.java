@@ -7,5 +7,7 @@ public interface UserInfoService {
 	public void signUp(UserInfo userinfo);
 	
 	public UserInfo getOneUserInfo(String emailAddress);
+	
+	public UserInfo getBodyDataByAddress(String emailAddress);
 
 }

@@ -2,6 +2,7 @@ package com.example.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.mapper.UserInfoMapper;
 import com.example.model.UserInfo;
@@ -22,6 +23,13 @@ public class UserInfoServiceImpl implements UserInfoService {
 	@Override
 	public UserInfo getOneUserInfo(String emailAddress) {
 		return mapper.findOneUserInfo(emailAddress);
+	}
+
+	@Override
+	@Transactional
+	public UserInfo getBodyDataByAddress(String emailAddress) {
+		
+		return mapper.findByUserAddress(emailAddress);
 	}
 
 }

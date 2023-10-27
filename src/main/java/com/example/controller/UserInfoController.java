@@ -55,7 +55,7 @@ public class UserInfoController {
 	
 	
 	
-	@GetMapping("/userinfo")
+	@PostMapping("/userinfo")
 	public String userInfo(UserInfoForm form,Model model){
 		
 		String userEmailAddress = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -73,7 +73,7 @@ public class UserInfoController {
 	}
 	
 	
-	@GetMapping("/userinfo/{emailAddress:.+}")
+	@PostMapping("/userinfo/{emailAddress:.+}")
 	public String userInfo(UserInfoForm form,Model model,@PathVariable("emailAddress")String EmailAddress){
 		
 		//ユーザー情報を1件取得

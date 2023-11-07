@@ -6,7 +6,7 @@
 	<!-- ユーザー1件登録 -->
 	<insert id="insertOne">
 		<!-- テーブル(sampletbの各項目) -->
-		insert into sampletb(
+		INSERT INTO sampletb(
 			id,
 			name,
 			weight,
@@ -14,15 +14,15 @@
 			created_at,
 		)
 		<!-- エンティティクラスに定義した各項目 -->
-		values(
-		values(
+		
+		VALUES(
 			#{id},
 			#{name,jdbcType=VARCHAR},
 			#{weight,jdbcType=DOUBLE},
 			#{fatPer,jdbcType=DOUBLE},
-			#{createdAt},
+			CURRENT_TIMESTAMP
 		)
-		)
+		
 	</insert>
 	
 	<select id="findAllBodyData" resultType="BodyData">

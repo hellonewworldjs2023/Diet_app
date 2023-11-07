@@ -45,7 +45,9 @@ public class BodyDataController {
 	
 	//身体データ入力画面を表示
 	@GetMapping("/inputdata")
-	public String goToInputData(@ModelAttribute BodyDataForm form) {
+	public String goToInputData(Model model,@ModelAttribute BodyDataForm form) {
+		model.addAttribute("bodyDataForm",new BodyDataForm());
+		
 		return "inputdata";
 	}
 
@@ -57,7 +59,7 @@ public class BodyDataController {
 		//入力チェック
 		if(bindingResult.hasErrors()) {
 			//エラーが発生したので登録画面に戻る
-			return goToInputData(form);
+			return goToInputData(model,form);
 		}
 		
 		//formをBodyDataクラスに変換

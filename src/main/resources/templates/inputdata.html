@@ -11,22 +11,23 @@
 <body class="text-center">
 	<p>データ入力画面</p>
 	<div>
-		<form method="post"action="inputdata" class="mx-auto w-25">
+		<form th:method="post" th:action="@{inputdata}" th:object="${bodyDataForm}" class="mx-auto w-25">
 			<div class="form-group text-start mt-3">
 				<label for="name">ユーザー名</label>
-				<input type="text" class="form-control" > 
+				<input type="text" class="form-control" th:field="*{name}" th:errorclass="is-invalid">
+				<div class="invalid-feedback" th:errors="*{name}"></div> 
 			</div>
 			<div class="form-group text-start mt-3">
 				<label for="weight">体重</label>
-				<input type="text" class="form-control"  ><!-- th:errorclass="is-invalid" -->
-<!--				 <div class="invalid-feedback" th:errors="*{weight}"></div>-->
+				<input type="text" class="form-control" th:field="*{weight}" th:errorclass="is-invalid"  >
+				 <div class="invalid-feedback" th:errors="*{weight}"></div>
 			</div>
 			<div class="form-group text-start mt-3">
 				<label for="fatPer">体脂肪率</label>
-				<input type="text" class="form-control" ><!--  th:errorclass="is-invalid" -->
-<!--				<div class="invalid-feedback" th:errors="*{fatPer}"></div> -->
+				<input type="text" class="form-control" th:field="*{fatPer}" th:errorclass="is-invalid">
+				<div class="invalid-feedback" th:errors="*{fatPer}"></div> 
 			</div>
-			<input type="button" value="入力" class="btn btn-primary w-10 mt-3">
+			<input type="submit" value="入力" class="btn btn-primary w-10 mt-3">
 		</form>
 	</div>
 </body>

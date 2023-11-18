@@ -28,7 +28,7 @@
 </resultMap>
 	<insert id="insertOneUserInfo">
 		<!-- テーブル(user_dataの各項目) -->
-		insert into user_data(
+		INSERT INTO user_data(
 			user_id,
 			user_name,
 			email_address,
@@ -40,7 +40,7 @@
 			point
 		)
 		<!-- エンティティクラスに定義した各項目 -->
-		values(
+		
 		values(
 			#{userId},
 			#{userName},
@@ -50,9 +50,9 @@
 			#{height},
 			#{waist},
 			#{targetWeight},
-			#{point};
+			#{point}
 		)
-		)
+		
 	</insert>
 	
 	<select id="findOneUserInfo" resultMap="userInfo">

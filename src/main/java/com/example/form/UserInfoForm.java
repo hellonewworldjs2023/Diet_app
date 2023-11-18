@@ -22,5 +22,7 @@ public class UserInfoForm {
 	private double targetWeight;
 	
 	private int point;
+	
+
 
 }

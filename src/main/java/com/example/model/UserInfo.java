@@ -18,6 +18,8 @@ public class UserInfo {
 	
 	private String passwordBeforeHashing;
 	
+	private String passwordBeforeHashingForCheck;
+	
 	private String password;
 	
 	private double height;

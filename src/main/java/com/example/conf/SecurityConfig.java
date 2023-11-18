@@ -27,12 +27,13 @@ public class SecurityConfig {
         		)
         
         .logout(logout -> logout
-        		.logoutSuccessUrl("/login?logout")
+        		.logoutSuccessUrl("/login")
         		.invalidateHttpSession(true)
         		)
         .authorizeHttpRequests(authz -> authz
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations())
                 .permitAll()
+                .requestMatchers("/signup").permitAll()
                 .anyRequest().authenticated()
         );
         return http.build();
